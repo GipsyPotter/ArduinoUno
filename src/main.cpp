@@ -58,9 +58,11 @@ void loop()   {
     }
     delay(100);
     if (Ctemp > high)   {
+        Serial.println("Relay Off");
         digitalWrite(Relay, HIGH);
     }
     else if (Ctemp < low)   {
+        Serial.println("Relay On");
         digitalWrite(Relay, LOW);
     }
 }
