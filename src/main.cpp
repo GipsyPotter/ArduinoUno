@@ -46,7 +46,7 @@ int spiRead()   {
 }
 
 void loop()   {
-    double high = 160.00, low = 140.00; //PP Melting point
+    double high = 250.00, low = 240.00; //PP Melting point
     v = spiRead();
     if (v == -1)   {
         Serial.print("No sensor \n");
