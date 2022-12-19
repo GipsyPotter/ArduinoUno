@@ -45,25 +45,22 @@ int spiRead()   {
     return value >> 3;
 }
 
-void loop()   {
+void loop() {
     double high = 250.00, low = 240.00; //PP Melting point
     v = spiRead();
-    if (v == -1)   {
+    if (v == -1) {
         Serial.print("No sensor \n");
-    }
-    else   {
-        Ctemp =  v * 0.25;
+    } else {
+        Ctemp = v * 0.25;
         Serial.println(Ctemp);
 
     }
     delay(100);
-    if (Ctemp > high)   {
+    if (Ctemp > high) {
         Serial.println("Relay Off");
         digitalWrite(Relay, HIGH);
-    }
-    else if (Ctemp < low)   {
+    } else if (Ctemp < low) {
         Serial.println("Relay On");
         digitalWrite(Relay, LOW);
     }
 }
-
